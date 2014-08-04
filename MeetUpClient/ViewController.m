@@ -8,12 +8,13 @@
 
 #import "ViewController.h"
 #import "JSONManager.h"
+#import "EventDetailsViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, JSONManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSDictionary *responseJSON;
+@property NSArray *responseJSON;
 @property JSONManager *jsonManager;
 
 @end
@@ -28,6 +29,13 @@
     self.jsonManager.delegate = self;
     [self.jsonManager makeRequest];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell*)sender
+{
+    EventDetailsViewController *vc = (EventDetailsViewController *)[segue destinationViewController];
+    vc.title = sender.textLabel.text;
+    vc.eventDetails = sender.jsonCellAttribute;
 }
 
 #pragma mark JSONManager Delegate
@@ -47,10 +55,18 @@
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    NSDictionary *venue = [self.responseJSON objectForKey:@"venue"];
+    NSDictionary *venue = [[self.responseJSON objectAtIndex:indexPath.row] objectForKey:@"venue"];;
     
-    cell.textLabel.text = [venue objectForKey:@"name"];
-    cell.detailTextLabel.text = [venue objectForKey:@"address_1"];
+    cell.jsonCellAttribute = [self.responseJSON objectAtIndex:indexPath.row];
+    
+    if ([((NSString*) [venue objectForKey:@"name"]) length] != 0 ){
+        cell.textLabel.text = [venue objectForKey:@"name"];
+        cell.detailTextLabel.text = [venue objectForKey:@"address_1"];
+    } else {
+        cell.textLabel.text = @"N/A";
+        cell.detailTextLabel.text = @"N/A";
+    }
+
     
     return cell;
 }

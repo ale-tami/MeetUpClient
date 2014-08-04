@@ -22,6 +22,8 @@
 		4DA8E352199011A300233780 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DA8E350199011A300233780 /* InfoPlist.strings */; };
 		4DA8E354199011A300233780 /* MeetUpClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E353199011A300233780 /* MeetUpClientTests.m */; };
 		4DA8E35F19901BF000233780 /* JSONManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E35E19901BF000233780 /* JSONManager.m */; };
+		4DA8E3621990322200233780 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E3611990322200233780 /* EventDetailsViewController.m */; };
+		4DA8E36519903EB000233780 /* UITableViewCell+JSONProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		4DA8E353199011A300233780 /* MeetUpClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetUpClientTests.m; sourceTree = "<group>"; };
 		4DA8E35D19901BF000233780 /* JSONManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONManager.h; sourceTree = "<group>"; };
 		4DA8E35E19901BF000233780 /* JSONManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONManager.m; sourceTree = "<group>"; };
+		4DA8E3601990322200233780 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		4DA8E3611990322200233780 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		4DA8E36319903EB000233780 /* UITableViewCell+JSONProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JSONProperty.h"; sourceTree = "<group>"; };
+		4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JSONProperty.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,10 @@
 				4DA8E33E199011A300233780 /* ViewController.m */,
 				4DA8E35D19901BF000233780 /* JSONManager.h */,
 				4DA8E35E19901BF000233780 /* JSONManager.m */,
+				4DA8E3601990322200233780 /* EventDetailsViewController.h */,
+				4DA8E3611990322200233780 /* EventDetailsViewController.m */,
+				4DA8E36319903EB000233780 /* UITableViewCell+JSONProperty.h */,
+				4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */,
 				4DA8E340199011A300233780 /* Images.xcassets */,
 				4DA8E32F199011A200233780 /* Supporting Files */,
 			);
@@ -255,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DA8E33F199011A300233780 /* ViewController.m in Sources */,
+				4DA8E3621990322200233780 /* EventDetailsViewController.m in Sources */,
 				4DA8E35F19901BF000233780 /* JSONManager.m in Sources */,
 				4DA8E339199011A300233780 /* AppDelegate.m in Sources */,
+				4DA8E36519903EB000233780 /* UITableViewCell+JSONProperty.m in Sources */,
 				4DA8E335199011A300233780 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
