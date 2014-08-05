@@ -24,6 +24,7 @@
 		4DA8E35F19901BF000233780 /* JSONManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E35E19901BF000233780 /* JSONManager.m */; };
 		4DA8E3621990322200233780 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E3611990322200233780 /* EventDetailsViewController.m */; };
 		4DA8E36519903EB000233780 /* UITableViewCell+JSONProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */; };
+		4DA8E3681990744D00233780 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA8E3671990744D00233780 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		4DA8E3611990322200233780 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		4DA8E36319903EB000233780 /* UITableViewCell+JSONProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JSONProperty.h"; sourceTree = "<group>"; };
 		4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JSONProperty.m"; sourceTree = "<group>"; };
+		4DA8E3661990744D00233780 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4DA8E3671990744D00233780 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				4DA8E3611990322200233780 /* EventDetailsViewController.m */,
 				4DA8E36319903EB000233780 /* UITableViewCell+JSONProperty.h */,
 				4DA8E36419903EB000233780 /* UITableViewCell+JSONProperty.m */,
+				4DA8E3661990744D00233780 /* WebViewController.h */,
+				4DA8E3671990744D00233780 /* WebViewController.m */,
 				4DA8E340199011A300233780 /* Images.xcassets */,
 				4DA8E32F199011A200233780 /* Supporting Files */,
 			);
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DA8E33F199011A300233780 /* ViewController.m in Sources */,
+				4DA8E3681990744D00233780 /* WebViewController.m in Sources */,
 				4DA8E3621990322200233780 /* EventDetailsViewController.m in Sources */,
 				4DA8E35F19901BF000233780 /* JSONManager.m in Sources */,
 				4DA8E339199011A300233780 /* AppDelegate.m in Sources */,

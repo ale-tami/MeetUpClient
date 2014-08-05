@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableViewCell (JSONProperty)
+@interface UITableViewCell (JSONProperty) // Added to the pch file so I dont have to import it
 
-@property NSDictionary *jsonCellAttribute; // Added to the pch file so I dont have to import it
+@property NSDictionary *jsonCellAttribute;
 
 @end

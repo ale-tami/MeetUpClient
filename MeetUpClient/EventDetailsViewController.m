@@ -7,6 +7,7 @@
 //
 
 #import "EventDetailsViewController.h"
+#import "WebViewController.h"
 
 @interface EventDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *groupName;
@@ -26,6 +27,20 @@
     self.confirmedAttendants.text = [[number stringValue] stringByAppendingString: self.confirmedAttendants.text];
     self.url.text = [self.eventDetails objectForKey:@"event_url"];
     [self.webView loadHTMLString:[self.eventDetails objectForKey:@"description"] baseURL:nil];
+}
+
+- (IBAction)onTap:(UITapGestureRecognizer *)sender {
+    
+      [self performSegueWithIdentifier:@"ModalSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    WebViewController *vc = [segue destinationViewController];
+    vc.url = self.url.text;
+}
+
+- (IBAction)onCloseButtonTap:(UIStoryboardSegue*)sender {
 }
 
 
