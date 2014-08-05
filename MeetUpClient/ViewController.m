@@ -16,6 +16,7 @@
 
 @property NSArray *responseJSON;
 @property JSONManager *jsonManager;
+@property UIImageView *imageView;
 
 @end
 
@@ -28,7 +29,15 @@
     self.jsonManager = [[JSONManager alloc]init ];
     self.jsonManager.delegate = self;
     [self.jsonManager makeRequest];
-
+    
+    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meetup"]];
+    self.imageView.frame = self.view.frame;
+    self.imageView.center = self.view.center;
+    self.imageView.alpha = 1.0;
+    
+    [self.view addSubview:self.imageView];
+    [self.view bringSubviewToFront:self.imageView];
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell*)sender
@@ -43,6 +52,9 @@
 {
     self.responseJSON = [json objectForKey:@"results"];
     [self.tableView reloadData];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.imageView.alpha = 0.0;
+    }];
 }
 
 #pragma mark TableView Delegate
