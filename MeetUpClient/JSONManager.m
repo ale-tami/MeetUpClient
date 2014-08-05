@@ -10,11 +10,15 @@
 
 @implementation JSONManager
 
-- (void)makeRequest
+- (void)makeRequestWithCriteria:(NSString *)criteria
 {
     __block NSDictionary * responseJSON = [[NSDictionary alloc] init]; //why I have to do this 
     
-    NSURL *url = [NSURL URLWithString:@"https://api.meetup.com/2/open_events.json?zip=60604&text=mobile&time=,1w&key=20652d28384d49b1932544980405817"];
+//    NSURL *url = [NSURL URLWithString:@"https://api.meetup.com/2/open_events.json?zip=60604&text=mobile&time=,1w&key=20652d28384d49b1932544980405817"];
+    
+    NSString *stringURL = [NSString stringWithFormat:@"https://api.meetup.com/2/open_events.json?zip=60604&text=%@&time=,1w&key=20652d28384d49b1932544980405817", criteria];
+    
+    NSURL *url = [NSURL URLWithString:stringURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         

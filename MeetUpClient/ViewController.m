@@ -10,9 +10,10 @@
 #import "JSONManager.h"
 #import "EventDetailsViewController.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource, JSONManagerDelegate>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, JSONManagerDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property NSArray *responseJSON;
 @property JSONManager *jsonManager;
@@ -28,7 +29,9 @@
     
     self.jsonManager = [[JSONManager alloc]init ];
     self.jsonManager.delegate = self;
-    [self.jsonManager makeRequest];
+    [self.jsonManager makeRequestWithCriteria:@"mobile"];
+    
+    self.searchBar.showsCancelButton = YES;
     
     self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"meetup"]];
     self.imageView.frame = self.view.frame;
@@ -46,6 +49,14 @@
     vc.title = sender.textLabel.text;
     vc.eventDetails = sender.jsonCellAttribute;
 }
+
+#pragma mark SearchBar Delegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.jsonManager makeRequestWithCriteria:searchBar.text];
+    [searchBar resignFirstResponder];
+}
+
 
 #pragma mark JSONManager Delegate
 - (void) responseWithJSON:(NSDictionary *) json;

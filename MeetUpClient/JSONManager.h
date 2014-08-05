@@ -18,7 +18,7 @@
 
 @property id <JSONManagerDelegate> delegate;
 
-- (void) makeRequest;
+- (void) makeRequestWithCriteria:(NSString*)criteria;
 
 
 
